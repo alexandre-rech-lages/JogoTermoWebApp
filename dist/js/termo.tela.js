@@ -27,7 +27,9 @@ export class TermoTela {
         for (const linha of this.divLinhasTermo) {
             for (const coluna of linha.children) {
                 coluna.textContent = '';
-                coluna.classList.add("cor-cinza");
+                coluna.classList.remove("letra-correta");
+                coluna.classList.remove("letra-posicao-incorreta");
+                coluna.classList.remove("letra-nao-existente");
             }
         }
         for (const botao of this.pnlTeclado.children) {
@@ -35,6 +37,7 @@ export class TermoTela {
         }
         this.labelMensagemFinal.textContent = '';
         this.divMensagemFinal.classList.add("display-none");
+        this.indiceColunaSelecionada = -1;
     }
     apagarLetra() {
         if (this.indiceColunaSelecionada >= 0) {
@@ -106,6 +109,8 @@ export class TermoTela {
         return palavra;
     }
     digitarLetra(event) {
+        if (this.indiceColunaSelecionada > 3 || this.indiceColunaSelecionada < -1)
+            return;
         const letra = event.target.textContent;
         this.indiceColunaSelecionada++;
         const coluna = this.linhaAtual.children[this.indiceColunaSelecionada];
