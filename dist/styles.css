@@ -1,0 +1,119 @@
+body,
+html {
+  margin: 0;
+  min-height: 100vh;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+
+  background-color: #080404;
+  color: #ffffff;
+}
+
+.conteudo {
+  padding: 1%;
+
+  gap: 10px;
+
+  display: grid;
+  place-items: center;
+}
+
+.grid-termo {
+  display: grid;
+  grid-template-rows: repeat(5, 65px);
+  gap: 7px;
+
+  margin-bottom: 2%;
+}
+
+.grid-termo>.linha {
+  display: grid;
+  grid-template-columns: repeat(5, 65px);
+  gap: 7px;
+}
+
+.grid-termo>.linha>.coluna {
+  display: grid;
+  place-items: center;
+  height: 100%;
+
+  background-color: #bebebe;
+  color: #2e2e2e;
+  border-radius: 3px;
+
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.coluna-selecionada {
+  border: 1px solid rgb(17, 0, 255);
+}
+
+.linha-selecionada {
+  border: 1px dashed red;
+}
+
+.grid-teclado {
+  display: grid;
+  grid-template-columns: repeat(10, 35px);
+  gap: 2.2px;
+}
+
+button {
+  height: 35px;
+
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.grid-teclado>.btn-enter {
+  grid-column: 2 span;
+  margin-top: 3px;
+  margin-left: 3px;
+}
+
+.grid-teclado>.btn-reiniciar {
+  grid-column: 3 span;
+  margin-top: 3px;
+}
+
+#divMensagemFinal{
+  gap: 10px;
+    display: grid;
+    place-items: center;
+}
+
+.letra-correta{
+  background-color: green !important;
+}
+
+.letra-posicao-incorreta{
+  background-color: orange !important;
+}
+
+.letra-nao-existente{
+  background-color: gray !important;
+}
+
+.display-none{
+  display: none !important;
+}
+
+.cor-cinza{
+  background-color: #e3d4d4 !important;
+}
+
+.cor-erro{
+  color: #ee1414 !important;
+}
+
+.cor-acertou{
+  color: #12d245 !important;
+}
